@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <link rel="stylesheet" href="style.css">
-
+    
     <title>Kalkulator BMI</title>
 </head>
 <body>
-    <script src="main.js"></script>
+    
     <header id="header-bar">
     <h2 id="logo">KalBMI</h2>
     <nav class="navigation-bar">
@@ -19,17 +19,27 @@
 
 
 <section class="input-section">
-    <label for="weight-input">Berat Badan (kg)</label>
-    <input type="number" id="t1" placeholder="Inputkan Berat Badan">
-    <label for="weight-input"> tinggi badan</label>
-    <input type="number" id="t2" placeholder="Inputkan tinggi badan">
-    <button type="submit" id="submit" onclick="calculate()">hitung</button>
+    <label for="beratBadan" id="t1s">Berat Badan (kg)</label>
+    <input type="number" id="beratBadan" placeholder="Inputkan Berat Badan">
+
+    <label for="usia" >Umur Anda</label>
+    <input type="number" id="usia" placeholder="Inputkan Usia Anda">
+
+    <label for="tinggiBadan"> Tinggi Badan (cm)</label>
+    <input type="number" id="tinggiBadan" placeholder="Inputkan tinggi badan">
     <section class="button-section">
-        <button>reset</button>
+        <button type="submit" id="btn1" onclick="itung()">Hitung BMI</button>
+        <button onclick="reseter()">reset</button>
     </section>
 
-    <input type="number" id="result">
-    <p id="result"></p>
+    <div class="hasil">
+        <b id="result"></b>
+        
+        <p id="usiaUser"></p>
+        <p id="penjelasan"></p>
+        <p id="akibat"></p>
+    </div>
 </section>
+<script src="script.js"></script>
 </body>
 </html>

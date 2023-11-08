@@ -1,5 +1,9 @@
 // ini adalah fungsi hitung yang akan dimasukan ke button submit
 function itung() {
+    //untuk mengabil data jenis kelamin dari radio input
+   let jK = document.querySelector('input[name=gender]:checked').value
+   console.log(jK)
+    document.getElementById('jKelamin').innerHTML = `Anda adalah seorang ${jK} dengan skor BMI sebesar :`
     //mendeklarasikan variabel berat badan yang mengambil data dari id beratBadan pada input
     let beratBadan = document.getElementById('beratBadan').value
     //mendeklarasikan variabel tinggi badan yang mengambil data dari id tinggiBadan pada input
@@ -17,7 +21,7 @@ function itung() {
     document.getElementById('result').innerHTML = hasil.toFixed(1) // toFixed berguna agar angka yang tampil tidak terlalu banyak
 
     //untuk menampilkan usia
-    document.getElementById('usiaUser').innerHTML = `Pada usia mu yang ke ${usia} BMI kamu menunjukan bahwa : `
+    document.getElementById('usiaUser').innerHTML = `Pada usia mu yang ke ${usia}tahun BMI kamu menunjukan bahwa : `
 
 //////////////////////
 //variabel yang dipakai adalah singkatan dari akibat berat badan dan variabel ini digunakan agar kode lebih mudah dibaca karena penjelasan akibat terlalu panjang
@@ -34,15 +38,19 @@ let aO = document.getElementById('akibat').innerHTML = 'Obesitas adalah kondisi 
 if (hasil <= 18.5) {
         document.getElementById('penjelasan').innerHTML = 'Berat Badan Kamu Kurang'
         document.getElementById('akibat').innerHTML =aBBK
+        document.getElementById('rate').innerHTML = 'karena rate kamu dibawah 18'
     } else if(hasil >= 18.6 && hasil <= 24.9){
         document.getElementById('penjelasan').innerHTML = 'Berat Badan Kamu Normal'
         document.getElementById('akibat').innerHTML =aBBN
+        document.getElementById('rate').innerHTML = 'karena rate kamu diantara 18.6 dan 24.9'
     } else if(hasil >= 25.0 && hasil <= 29.9){
         document.getElementById('penjelasan').innerHTML = 'Kamu kelebihan beran badan'
         document.getElementById('akibat').innerHTML =aBBB
+        document.getElementById('rate').innerHTML = 'karena rate kamu diantara 25.0 dan 29.9'
     }else{
         document.getElementById('penjelasan').innerHTML = 'Kamu Obesitas'
         document.getElementById('akibat').innerHTML =aO
+        document.getElementById('rate').innerHTML = 'karena rate kamu diatas 30'
     }
 
 }
